@@ -9,41 +9,39 @@ function Footer() {
 <img src={logo}  width={200} height={100}/>
 
 <ul>
-    <li>
-        Doormat Navigation
-        {/* <ul> */}
+    <h5>
+    Doormat Navigation
+    </h5>
             <li className='footerList'>
             <a href=''>About</a>
             <a href=''>Menu</a>
             <a href=''>Order Online</a>
             <a href=''>Login</a>
-            </li>
-        {/* </ul> */}
     </li>
+</ul>
 
-    <li>
-        Contact
-        {/* <ul> */}
+
+<ul>
+    <h5>
+    Contact
+    </h5>
             <li className='footerList'>
             <a href=''>Adress</a>
             <a href=''>Phone number</a>
             <a>email</a>
             </li>
-        {/* </ul> */}
-    </li>
+</ul>
 
-    <li>
-        Social media
-        {/* <ul> */}
+<ul>
+    <h5>
+    Social media
+    </h5>
             <li className='footerList'>
             <a>Instagram</a>
             <a>Facebook</a>
             </li>
-        {/* </ul> */}
-    </li>
 </ul>
 
-</footer>
-    );
+</footer>);
 }
 export default Footer;
