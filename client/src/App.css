@@ -1,0 +1,312 @@
+:root {
+  --clr-text-secondary: brown;
+  --clr-text-thirdly: darkolivegreen;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+.container {
+  font-family: cursive;
+}
+
+/**** Header ****/
+
+#header {
+  display: flex;
+  margin-block: 1em;
+}
+#header .logo {
+  margin-left: 10em;
+  width: 300px;
+  height: 6em;
+}
+.hamburgerMenu {
+  display: none;
+}
+#mainNav {
+  margin-left: 20%;
+ align-self: center;
+}
+#mainNav ul {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+  margin: 10px;
+  padding: 0;
+}
+#mainNav a {
+  color: var(--clr-text-secondary);
+  text-decoration: none;
+}
+#mainNav a:hover,
+#mainNav a:focus {
+  color: darkorange;
+  text-decoration: underline;
+}
+
+
+/**** Main *****/
+
+main {
+  padding-top: 20px;
+}
+
+.description {
+  display: flex;
+  background-color: bisque;
+  height: 400px;
+}
+.main-content {
+  margin-left: 10em;
+  margin-right: 8em;
+  width: 40%;
+  align-self: center;
+}
+.description span {
+  font-size: 1rem;
+  color: #fff;
+}
+.description button {
+  margin-top: 1rem;
+  padding: 5px;
+  background-color: gold;
+  border: none;
+  border-radius: 6px;
+}
+.description button:hover {
+  cursor: pointer;
+}
+.featured {
+  width: 50%;
+}
+.featured img {
+  height: 430px;
+  border-radius: 5%;
+  margin-top: 2em;
+  max-width: 80%;
+}
+
+
+.specialHeader {
+ display: flex;
+ width: 100%;
+ justify-content: space-evenly;
+ margin-top: 4rem;
+}
+.specialHeader h2 {
+  font-size: 30px;
+}
+.specialHeader button {
+  background-color: gold;
+  width: 10em;
+  height: 3em;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.specialHeader button:hover {
+  cursor: pointer;
+}
+.specialBoxes {
+  display: flex;
+  margin: 2rem;
+  justify-content: center;
+}
+.specialBoxes img {
+  max-width: 280px;
+  min-width: 280px;
+  max-height: 200px;
+  border-radius: 5%;
+  border-top-left-radius: 20%;
+}
+.specialBoxes .price-text {
+  color: orange;
+  font-size: .8rem;
+  text-align: right;
+  margin-right: 1em;
+}
+.specialBox {
+  background-color: #f2efef;
+  border-radius: 5px;
+  max-width: 280px;
+  font-size: 100%;
+  margin: 1.5rem;
+  box-shadow: 7px 7px 10px #ccc;
+ }
+ .boxBody {
+  color: black;
+  margin: 1em;
+ }
+.specialBox h3 {
+  display: flex;
+  justify-content: space-between;
+}
+.specialBox button {
+  margin: 1em;
+  border: none;
+  font-weight: bold;
+}
+
+
+ .testimonials {
+  background-color: cornsilk;
+ }
+ .testimonials h4 {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 30px;
+ }
+ .testimonialBox {
+  display: flex;
+  justify-content: center;
+ }
+ .testimonials section {
+  background-color: #fff;
+  margin: 20px;
+  padding: 10px;
+  width: 200px;
+ }
+ .testimonials img {
+  padding-right: 5px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+ }
+
+ .about{
+  display: flex;
+  padding-block: 3rem;
+ }
+ .aboutContent {
+  font-size: 20px;
+  text-align: justify;
+  width: 40%;
+  margin-inline: 8%;
+ }
+ .aboutImages {
+  width: 50%;
+ }
+ .aboutImages #restaurant {
+  margin-left: 10em;
+  width: 50%;
+ }
+ .aboutImages #restaurantChef {
+  margin-left: 1em;
+  margin-bottom: -15em;
+  width: 40%;
+ }
+ #restaurant , #restaurantChef {
+  box-shadow: 3px 3px 15px rgba(0,0,0,.2);
+  height: 60%;
+ }
+
+/**** Footer ****/
+
+#pageFooter {
+  display: flex;
+  background-color: burlywood;
+  color: var(--clr-text-thirdly);
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+#pageFooter ul {
+  list-style: none;
+}
+#pageFooter a {
+  display: grid;
+  text-decoration: none;
+  color: var(--clr-text-thirdly);
+  opacity: 60%;
+}
+
+
+@media ( max-width : 1024px) {
+
+  /***** Header ****/
+
+  #header {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  #header .logo {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-block: 15px;
+    width: 100%;
+  }
+  #mainNav {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  /***** main *****/
+  .specialBoxes {
+    flex-wrap: wrap;
+  }
+  .testimonialBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+@media (max-width : 768px) {
+
+  /**** main *****/
+  .about {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+  .aboutImages {
+    width: 100%;
+    margin: 2em;
+   }
+
+  /**** footer  ****/
+  #pageFooter {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  #pageFooter ul {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+
+  /**** header *****/
+  #mainNav {
+    display: none;
+  }
+  .hamburgerMenu {
+    display: block;
+    width: 2rem;
+    margin-left: 50%;
+    border: none;
+    background-color: #fff;
+  }
+  /**** main *****/
+  .main-content {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .featured {
+    display: none;
+  }
+  .specialHeader {
+    flex-wrap: wrap;
+  }
+}
+

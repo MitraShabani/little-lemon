@@ -1,0 +1,40 @@
+:root {
+    --clr-text-secondary: brown;
+    --clr-text-thirdly: darkolivegreen;
+    --clr-box-secondary: #f2efef;
+  }
+
+  .BookingForm {
+    text-align: center;
+  }
+.BookingForm li {
+    list-style: none;
+    margin-block: 1rem;
+    background-color: var(--clr-box-secondary);
+    box-shadow: 7px 7px 10px gainsboro;
+    margin-inline: 200px;
+}
+.BookingForm label{
+    margin-right: 2rem;
+    display: grid;
+}
+.BookingForm .submitButton {
+    margin-block: 3rem;
+    border-radius: 6px;
+    background-color: var(--clr-text-thirdly);
+    color: white;
+    border: none;
+    padding: .8rem;
+}
+.BookingForm .submitButton:hover {
+    cursor: pointer;
+}
+.BookingForm input:focus:invalid {
+border: 2px solid red;
+}
+
+.confirmedBooking {
+    margin-block: 10rem;
+    text-align: center;
+    color: var(--clr-text-thirdly);
+}
