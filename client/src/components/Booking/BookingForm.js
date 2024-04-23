@@ -1,7 +1,5 @@
 import { type } from '@testing-library/user-event/dist/type';
-import React from 'react';
-import { useState, useReducer } from 'react';
-// import io from 'socket.io.client';
+import React, { useState, useEffect } from 'react';
 
 function BookingForm(props){
 
@@ -42,7 +40,8 @@ function BookingForm(props){
     const handleChange = (type, data) => {
 
         setFormData({...formData, [type]: data})
-        props.updateTimes(formData.date);
+        // props.updateTimes(formData.date);
+
     }
     const renderEmptyWarning = () => {
         return (
@@ -54,6 +53,9 @@ function BookingForm(props){
         )
       }
 
+      useEffect(() => {
+        props.updateTimes(formData.date);
+      },[formData.date]);
 
     return (
         <>
@@ -63,34 +65,35 @@ function BookingForm(props){
                 <div>
                 <ul>
                 <li>
-                    <label for="date">Choose date:</label>
+                    <label htmlFor="date">Choose date:</label>
                     <input
-                    id='date'
+                    id="date"
                     type='date'
                     value={formData.date}
                     onChange={(e) => handleChange("date",e.target.value)}
                     ></input>
                 </li>
                  <li>
-                    <label for="time">Choose time:</label>
+                    <label htmlFor="time">Choose time:</label>
                         <select
-                        id='time'
-                        type='time'
+                        id="time"
+                        type='select-one'
                         value={formData.time}
                         onChange={(e) => handleChange("time",e.target.value)}
                         >
                             <option value=''>Select a Time</option>
                     {
-                        props.availableTimes.map((time, index) =>{
-                            return <option key={index}>{time}</option>
+                        props.availableTimes.map((time) =>{
+                            return <option key={time}>{time}</option>
                         })
+                        
                     }
                         </select>
                 </li>
                 <li>
-                    <label for="guests">Number of guests: {formData.guests}</label>
+                    <label htmlFor="guests">Number of guests: {formData.guests}</label>
                     <input
-                    id='guests'
+                    id="guests"
                     type='range'
                     max='20'
                     value= {formData.guests}
@@ -98,9 +101,9 @@ function BookingForm(props){
                     />
                 </li>
                 <li>
-                    <label for="occasion">Occasion:</label>
+                    <label htmlFor="occasion">Occasion:</label>
                     <select
-                    id='occasion'
+                    id="occasion"
                     value={formData.occasion}
                     onChange={(e) => handleChange("occasion",e.target.value)}
                     >
@@ -110,10 +113,10 @@ function BookingForm(props){
                     </select>
                 </li>
                 <li>
-                    <label for="emailAddress">Email Address:</label>
+                    <label htmlFor="emailAddress">Email Address:</label>
                     <input
                     type='email'
-                    id='emailAddress'
+                    id="emailAddress"
                     value={formData.email}
                     onChange={(e) => handleChange("email",e.target.value)}
                     required
